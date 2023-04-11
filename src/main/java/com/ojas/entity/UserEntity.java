@@ -7,34 +7,34 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "USER")
-public class User {
-
+@Table(name="user")
+public class UserEntity {
+	
 	@Id
 	@Column(name = "First_Name")
 	private String fisrtName;
+
 	@Column(name = "Last_Name")
 	private String lastName;
+
 	@Column(name = "Sur_Name")
 	private String surName;
+
 	@Column(name = "Date_of_Birth")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dateOfBirth;
+
 	@Column(name = "City_Name")
 	private String cityName;
 
-	public User(String fisrtName, String lastName, String surName, Date dateOfBirth, String cityName) {
-		super();
-		this.fisrtName = fisrtName;
-		this.lastName = lastName;
-		this.surName = surName;
-		this.dateOfBirth = dateOfBirth;
-		this.cityName = cityName;
-	}
+	@Column(name = "User_Name")
+	private String userName;
+
+	@Column(name = "Password")
+	private String password;
 
 	public String getFisrtName() {
 		return fisrtName;
@@ -76,9 +76,39 @@ public class User {
 		this.cityName = cityName;
 	}
 
-	public User() {
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public UserEntity(String fisrtName, String lastName, String surName, Date dateOfBirth, String cityName,
+			String userName, String password) {
+		super();
+		this.fisrtName = fisrtName;
+		this.lastName = lastName;
+		this.surName = surName;
+		this.dateOfBirth = dateOfBirth;
+		this.cityName = cityName;
+		this.userName = userName;
+		this.password = password;
+	}
+
+	public UserEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+
 
 }
