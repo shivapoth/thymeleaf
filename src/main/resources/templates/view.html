@@ -25,45 +25,55 @@
 	<div class="container">
 		<div class="card">
 			<div class="card-header">
-				<h2>User List</h2>
+				<h2 style="text-align: center;">User List</h2>
 			</div>
 			<div class="card-body">
-				<table class="table table-striped table-hover" id="tableId">
-					<thead th:object="${findAll}">
-						<tr>
-							<th>FirstName</th>
-							<th>LastName</th>
-							<th>SurName</th>
-							<th>D.O.B</th>
-							<th>CityName</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="user : ${findAll}">
-							<td th:text="${user.fisrtName}"></td>
-							<td th:text="${user.lastName}"></td>
-							<td th:text="${user.surName}"></td>
-							<td th:text="${user.dateOfBirth}"></td>
-							<td th:text="${user.cityName}"></td>
-							<!-- <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
-				<td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td> -->
-						</tr>
-					</tbody>
-					<tfoot>
-						<div>
-							<button class="btn btn-warning">
-								<a th:href="@{/pdf}">PDF</a>
-							</button>
-							<!-- <p></p> -->
-						</div>
-						<div>
-							<button class="btn btn-success">
-								<a th:href="@{/excel}">EXCEL</a>
-							</button>
-							<!-- <p></p> -->
-						</div>
-					</tfoot>
-				</table>
+				<div class="table-responsive">
+					<table class="table table-striped table-hover  table align-middle"
+						id="tableId">
+						<thead th:object="${findAll}">
+							<tr>
+								<th>FirstName</th>
+								<th>LastName</th>
+								<th>SurName</th>
+								<th>D.O.B</th>
+								<th>CityName</th>
+								<!-- <th colspan="2">Action</th> -->
+							</tr>
+						</thead>
+						<tbody class="table-group-divider table-light">
+							<tr th:each="user : ${findAll}">
+								<td th:text="${user.fisrtName}"></td>
+								<td th:text="${user.lastName}"></td>
+								<td th:text="${user.surName}"></td>
+								<td th:text="${user.dateOfBirth}"></td>
+								<td th:text="${user.cityName}"></td>
+								<!-- <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
+							<td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td> -->
+							</tr>
+						</tbody>
+						<tfoot>
+							<div class="d-flex justify-content-center">
+								<div class="m-2">
+									<button class="btn btn-warning">
+										<a th:href="@{/pdf}">PDF</a>
+									</button>
+								</div>
+								<div class="m-2">
+									<button class="btn btn-info">
+										<a th:href="@{/excel}">EXCEL</a>
+									</button>
+								</div>
+								<div class="m-2">
+									<button class="btn btn-light">
+										<a th:href="@{/mail}">MAIL</a>
+									</button>
+								</div>
+
+							</div>
+						</tfoot>
+					</table>
+				</div>
 			</div>
 			<div class="card-footer">
 				<a th:href="@{/loadform}">Add a new user</a>
@@ -74,7 +84,6 @@
 		$(document).ready(function() {
 			$('#tableId').DataTable({
 				responsive : true,
-				pageLength : 2
 			});
 		})
 	</script>

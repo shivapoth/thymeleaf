@@ -18,7 +18,7 @@ public class PdfGenetator {
 			Document document = new Document();
 
 			// Create OutputStream instance.
-			FileOutputStream outputStream = new FileOutputStream(new File("C:\\Users\\HP\\OneDrive\\Desktop\\userlist.pdf"));
+			FileOutputStream outputStream = new FileOutputStream(new File("C:\\Users\\sp22282\\Documents\\userlist.pdf"));
 
 			// Create PDFWriter instance.
 			PdfWriter.getInstance(document, outputStream);
@@ -36,7 +36,6 @@ public class PdfGenetator {
 				}
 
 			});
-			document.add(new Paragraph("Hello world, " + "this is a test pdf file."));
 
 			// Close document and outputStream.
 			document.close();

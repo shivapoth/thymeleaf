@@ -10,65 +10,75 @@
 	crossorigin="anonymous">
 <body>
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-lg-4 col-md-6 col-sm-12">
 				<div class="card">
 					<div class="card-head">
-						<h1>User Registration Form</h1>
+						<h1 style="text-align: center;">User Registration</h1>
 					</div>
 					<div class="card-body">
 						<form th:action="@{/userform}" th:object="${user}" method="post">
 							<div>
-								<label>First-Name:</label> <input type="text"
+								<label>FirstName</label> <input type="text"
 									th:field="*{fisrtName}" class="form-control"
 									placeholder="Enter Your First Name">
 							</div>
+							<br>
 
 							<div>
-								<label>Last-Name:</label> <input type="text"
+								<label>LastName</label> <input type="text"
 									th:field="*{lastName}" class="form-control"
 									placeholder="Enter Your Last Name">
 							</div>
+							<br>
 
 							<div>
-								<label>Sur-Name:</label> <input type="text"
-									th:field="*{surName}" class="form-control"
-									placeholder="Enter Your SurName">
+								<label>SurName</label> <input type="text" th:field="*{surName}"
+									class="form-control" placeholder="Enter Your SurName">
 							</div>
+							<br>
 
 							<div>
-								<label>Date-Of-Birth:</label> <input type="date"
+								<label>DateofBirth</label> <input type="date"
 									th:field="*{dateOfBirth}" class="form-control"
 									placeholder="Enter Your Date of Birth">
 							</div>
+							<br>
 
 							<div>
-								<label>City-Name:</label> <input type="text"
+								<label>CityName</label> <input type="text"
 									th:field="*{cityName}" class="form-control"
 									placeholder="Enter Your City Name">
 							</div>
+							<br>
 							<div>
-								<label>UserName:</label> <input type="text"
+								<label>UserName</label> <input type="text"
 									th:field="*{userName}" class="form-control"
 									placeholder="Enter Your username">
 							</div>
+							<br>
 							<div>
 								<label>Password</label> <input type="password"
 									th:field="*{password}" class="form-control"
 									placeholder="Enter Your password">
 							</div>
-
-							<button class="btn btn-primary">Register</button>
-
+							<br>
 						</form>
-
-						<form th:action="@{/form}">
-							<button class="btn btn-info">ViewAll</button>
-						</form>
+						<div class="d-flex justify-content-between">
+							<div class="m-2">
+								<button class="btn btn-primary">Register</button>
+							</div>
+							<div class="m-2">
+								<button class="btn btn-info">
+									<a href="/form">ViewAll</a>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 </body>

@@ -22,8 +22,7 @@ public class ExcelGenerator {
 		boolean flag = false;
 
 		try {
-			FileOutputStream out = new FileOutputStream(
-					new File("C:\\Users\\HP\\OneDrive\\Desktop\\userlistexcel.xls"));
+			FileOutputStream out = new FileOutputStream(new File("C:\\Users\\sp22282\\Documents\\userlistexcel.xls"));
 
 			HSSFSheet sheet = workbook.createSheet("sheet1");
 			int rownum = 0;
@@ -55,7 +54,7 @@ public class ExcelGenerator {
 			e.printStackTrace();
 		}
 
-		System.out.println("Excel Successfully generated");
+//		System.out.println("Excel Successfully generated");
 
 		return flag;
 	}

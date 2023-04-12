@@ -4,16 +4,26 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.Data;
+import lombok.Setter;
+
 @Entity
-@Table(name="user")
+@Table(name = "user_form")
 public class UserEntity {
-	
+
 	@Id
+	@Column(name = "ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+
 	@Column(name = "First_Name")
 	private String fisrtName;
 
@@ -35,6 +45,47 @@ public class UserEntity {
 
 	@Column(name = "Password")
 	private String password;
+
+	@Transient
+	private String captcha;
+
+	@Transient
+	private String hiddenCaptcha;
+
+	@Transient
+	private String realCaptcha;
+
+	public String getCaptcha() {
+		return captcha;
+	}
+
+	public void setCaptcha(String captcha) {
+		this.captcha = captcha;
+	}
+
+	public String getHiddenCaptcha() {
+		return hiddenCaptcha;
+	}
+
+	public void setHiddenCaptcha(String hiddenCaptcha) {
+		this.hiddenCaptcha = hiddenCaptcha;
+	}
+
+	public String getRealCaptcha() {
+		return realCaptcha;
+	}
+
+	public void setRealCaptcha(String realCaptcha) {
+		this.realCaptcha = realCaptcha;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getFisrtName() {
 		return fisrtName;
@@ -92,9 +143,10 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	public UserEntity(String fisrtName, String lastName, String surName, Date dateOfBirth, String cityName,
+	public UserEntity(int id, String fisrtName, String lastName, String surName, Date dateOfBirth, String cityName,
 			String userName, String password) {
 		super();
+		this.id = id;
 		this.fisrtName = fisrtName;
 		this.lastName = lastName;
 		this.surName = surName;
@@ -108,7 +160,5 @@ public class UserEntity {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-
 
 }
