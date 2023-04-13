@@ -92,15 +92,15 @@ public class UserController {
 
 		if (save != null) {
 
-			model.addAttribute("msg", "User Registered successfully!");
+			model.addAttribute("message", "User Registered successfully!");
 
-			return "redirect:userform";
+			return "success";
 
 		} else {
 
-			model.addAttribute("msg", "User Failed to Registered successfully!");
+			model.addAttribute("message", "User Failed to Registered successfully!");
 
-			return "redirect:userform";
+			return "fail";
 		}
 
 	}
@@ -150,4 +150,13 @@ public class UserController {
 		return "view";
 	}
 
+	@RequestMapping("/home")
+	public String registerPage(Model model) {
+
+		UserEntity u = new UserEntity();
+
+		model.addAttribute("user", u);
+
+		return "register.html";
+	}
 }

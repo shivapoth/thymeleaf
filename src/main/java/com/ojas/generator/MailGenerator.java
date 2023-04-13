@@ -17,7 +17,17 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+
+@Service
 public class MailGenerator {
+
+//	@Scheduled(cron="0 0/1 * 1/1 * ?")
+//	public void send() {
+//		String filename = "C:\\Users\\sp22282\\Documents\\userlist.pdf";
+//		mailGen("venu1382@gmail.com", filename);
+//	}
 
 	public static boolean mailGen(String email, String filename) {
 		String to = email;

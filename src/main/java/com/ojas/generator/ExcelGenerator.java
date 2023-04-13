@@ -45,6 +45,8 @@ public class ExcelGenerator {
 				workbook.write(out);
 				out.flush();
 				out.close();
+				flag = true;
+
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

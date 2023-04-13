@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -161,4 +163,5 @@ public class UserEntity {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 }

@@ -10,70 +10,74 @@
 	rel="stylesheet"
 	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
 	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-	<div class="container p-3 my-3 border">
-		<div class="card">
-			<div class="card-header bg-info text-black">
-				<h3>USER REGISTRATION PAGE</h3>
-			</div>
-			<!-- -->
-			<div class="card-body">
-				<form th:action="@{/verify}" method="POST" th:object="${user}">
-					<input type="hidden" th:field="*{id}">
-					<div class="row">
-						<div class="col-2">
-							<label>Username</label>
-						</div>
-						<div class="col-4">
-							<input type="text" th:field="*{userName}" class="form-control" />
-						</div>
+	<div class="container ">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-md-6 col-sm-12 ">
+				<div class="card">
+					<div class="card-header bg-info text-black">
+						<h3>USER REGISTRATION PAGE</h3>
 					</div>
-					<br>
-					<div class="row">
-						<div class="col-2">
-							<label>Password</label>
-						</div>
-						<div class="col-4">
-							<input type="password" th:field="*{password}"
-								class="form-control" />
-						</div>
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-2">
-							<label>CAPTCHA</label>
-						</div>
-						<div class="col-4">
-							<img th:src="*{'data:realCaptcha/jpg;base64,'+ realCaptcha}" />
-						</div>
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-2">
-							<label>ENTER CAPTCHA</label>
-						</div>
-						<div class="col-4">
-							<input type="hidden" th:field="*{hiddenCaptcha}" /> <input
-								type="text" th:field="*{captcha}" class="form-control" />
-						</div>
-					</div>
+					<div class="card-body">
+						<form th:action="@{/verify}" method="POST" th:object="${user}">
+							<input type="hidden" th:field="*{id}">
+							<div class="row g-3 align-items-center">
+								<div class="col-auto">
+									<label>Username</label>
+								</div>
+								<div class="col-auto">
+									<input type="text" th:field="*{userName}" class="form-control" />
+								</div>
+							</div>
+							<br>
+							<div class="row g-3 align-items-center">
+								<div class="col-auto">
+									<label>Password</label>
+								</div>
+								<div class="col-auto">
+									<input type="password" th:field="*{password}"
+										class="form-control" />
+								</div>
+							</div>
+							<br>
+							<div class="row g-3 align-items-center">
+								<div class="col-auto">
+									<label>CAPTCHA</label>
+								</div>
+								<div class="col-auto">
+									<img th:src="*{'data:realCaptcha/jpg;base64,'+ realCaptcha}" />
+								</div>
+							</div>
+							<br>
+							<div class="row g-3 align-items-center">
+								<div class="col-auto">
+									<label>ENTER CAPTCHA</label>
+								</div>
+								<div class="col-auto">
+									<input type="hidden" th:field="*{hiddenCaptcha}" /> <input
+										type="text" th:field="*{captcha}" class="form-control" />
+								</div>
+							</div>
 
-					<br>
-					<div class="col-md-4 col-md-offset-4 text-center">
-						<input type="submit" value="SIGN-IN" class="btn btn-success" />
+							<br>
+							<div class="d-flex justify-content-between">
+								<div class="md-2">
+									<input type="submit" value="SIGN-IN" class="btn btn-success" />
+								</div>
+								<div class="md-2">
+									<button class="btn btn-light">
+										<a th:href="@{/home}">SIGN-OUT</a>
+									</button>
+								</div>
+							</div>
+						</form>
 					</div>
-				</form>
-				
-				<div class="col-md-4 col-md-offset-4 text-center">
-					<button class="btn btn-primary">
-						<a  href="./register.html">SIGN-OUT</a>
-					</button>
 				</div>
-				<br />
-			</div>
-			<div th:if="${message!=null}" class="card-footer bg-info text-white">
-				<span class="alert alert-danger" th:text="${message}"></span>
 			</div>
 		</div>
 	</div>

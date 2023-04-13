@@ -8,6 +8,10 @@
 	rel="stylesheet"
 	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
 	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
 	<div class="container">
 		<div class="row justify-content-center">
@@ -63,23 +67,25 @@
 									placeholder="Enter Your password">
 							</div>
 							<br>
+							<div class="d-flex justify-content-between">
+								<div class="md-2">
+									<button class="btn btn-primary">Register</button>
+								</div>
+
+								<div class="md-2">
+									<button class="btn btn-info">
+										<a th:href="@{/form}">ViewAll</a>
+									</button>
+								</div>
+							</div>
 						</form>
-						<div class="d-flex justify-content-between">
-							<div class="m-2">
-								<button class="btn btn-primary">Register</button>
-							</div>
-							<div class="m-2">
-								<button class="btn btn-info">
-									<a href="/form">ViewAll</a>
-								</button>
-							</div>
-						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
+
 
 </body>
 </html>

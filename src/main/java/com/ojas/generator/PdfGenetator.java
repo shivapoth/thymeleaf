@@ -11,8 +11,11 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.ojas.entity.UserEntity;
 
 public class PdfGenetator {
+	
 	public static boolean GeneratePdf(List<UserEntity> userList) {
+		
 		boolean flag = false;
+		
 		try {
 			// Create Document instance.
 			Document document = new Document();
